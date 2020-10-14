@@ -4,12 +4,12 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Board cleaner',
+        title: 'Board cleaner Raj',
         svgIcon: icon,
         onClick: async () => {
 
           // Show modal and wait for user choice
-          let needToClear = confirm('Do you want delete all content?')
+          let needToClear = confirm('Hey! This will delete all content. Do you want delete all content?')
 
           if (needToClear) {
             // Get all board objects
@@ -20,6 +20,10 @@ miro.onReady(() => {
 
             // Display success
             miro.showNotification('Content has been deleted')
+          }
+          else
+          {
+            miro.showNotification('Alright, canceled the delete action')
           }
         }
       }
