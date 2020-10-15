@@ -4,12 +4,12 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Add Card Rect 5:13',
+        title: 'Add Card Rect 5:16',
         svgIcon: icon,
         onClick: async () => {
 
           // Show modal and wait for user choice
-          let blnAddCard = confirm('Hey! This will add a card? 1')
+          let blnAddCard = confirm('Hey! This will add a card? 2')
 
           if (blnAddCard) {
             // Get all board objects
