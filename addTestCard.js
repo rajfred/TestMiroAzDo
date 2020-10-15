@@ -19,34 +19,10 @@ miro.onReady(() => {
           await miro.board.widgets.create
           (
             {
-                "type": 'CARD',
-                "bounds": {
-                    "width": 100,
-                    "height": 60
-                },
-                "x": 100,
-                "y": 100,
-                "scale": 100,
-                "style": {
-                    "backgroundColor": #608bd1
-                },
                 "title": "Story Title",
-                "description": "Story Description",                
-                "card": {
-                         "customFields": [
-                             {"value": "Custom Value 1"},
-                             ]
-                         ,
-                        "logo":{iconUrl: ""} //maybe subject to CORS restrictions
-                   }
-                 ,
-                "metadata": {
-                    [miroAppClientId]: {
-                        "key 1": "value 1",
-                        "key 2": "value 2",
-                        "key 3": "value 3",
-                    }
-                }
+                "description": "Story Description",
+                "x": 100,
+                "y": 100
                                           
             }
           )
