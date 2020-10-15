@@ -26,7 +26,7 @@ miro.onReady(() => {
                   "title": "Story Title",
                   "description": "Story Description",
                   "bounds": {
-                      "width": 200,
+                      "width": 2000,
                       "height": 60
                   }
               }
