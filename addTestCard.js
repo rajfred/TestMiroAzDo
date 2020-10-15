@@ -16,13 +16,13 @@ miro.onReady(() => {
             //let objects = await miro.board.widgets.get()
 
             // Create new card
-          await miro.board.widgets.create
-          (
-            {
-                "title": "Story Title",
-                "description": "Story Description"
-            }
-          )
+            await miro.board.widgets.create(
+                                  {
+                                    type: 'card',                                           
+                                    "title": "AzDo out Story title",
+                                    "description": "Details if any..."                                          
+                                  }
+            )
 
             // Display success
             miro.showNotification('Card has been added')
