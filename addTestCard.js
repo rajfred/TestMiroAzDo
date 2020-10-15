@@ -4,12 +4,12 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Add Card Rect 5:03',
+        title: 'Add Card Rect 5:13',
         svgIcon: icon,
         onClick: async () => {
 
           // Show modal and wait for user choice
-          let blnAddCard = confirm('Hey! This will add a card? 0')
+          let blnAddCard = confirm('Hey! This will add a card? 1')
 
           if (blnAddCard) {
             // Get all board objects
@@ -19,6 +19,7 @@ miro.onReady(() => {
           await miro.board.widgets.create
           (
             {
+              "type":'card',
                 "title": "Story Title",
                 "description": "Story Description"
             }
