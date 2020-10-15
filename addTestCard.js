@@ -13,10 +13,13 @@ miro.onReady(() => {
 
           if (blnAddCard) {
             // Get all board objects
-            let objects = await miro.board.widgets.get()
+            //let objects = await miro.board.widgets.get()
 
             // Create new card
-          await miro.board.widgets.create({type: 'card', text: 'Hello'})
+          await miro.board.widgets.create({type: 'card',                                           
+                                          "title": "AzDo out Story title",
+                                          "description": "Details if any..."                                          
+                                          })
 
             // Display success
             miro.showNotification('Card has been added')
