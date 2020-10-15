@@ -4,7 +4,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Add Card Rect 5:16',
+        title: 'Add Card Rect 5:24',
         svgIcon: icon,
         onClick: async () => {
 
@@ -21,7 +21,11 @@ miro.onReady(() => {
             {
               "type":'card',
                 "title": "Story Title",
-                "description": "Story Description"
+                "description": "Story Description",
+                "bounds": {
+                    "width": 100,
+                    "height": 60
+                }
             }
           )
 
