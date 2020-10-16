@@ -7,7 +7,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Add Card Axios',
+        title: 'Raj: Add Card Axios 3:35 import',
         svgIcon: icon,
         onClick: async () => {
 
