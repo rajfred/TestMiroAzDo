@@ -1,4 +1,8 @@
+
 const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="4"></circle>'
+const viewport = await miro.board.viewport.get()
+const centeredX = viewport.x + viewport.width / 2
+const centeredY = viewport.y + viewport.height / 2
 
 miro.onReady(() => {
   miro.initialize({
@@ -18,19 +22,33 @@ miro.onReady(() => {
             // Delete all board objects
             //await miro.board.widgets.deleteById(objects.map(object => object.id))
 
+            //miro.board.widgets.create({type:'sticker', x:centeredX, y:centeredY})
+            //let widgets = await miro.board.widgets.create([{type: 'sticker', text: 'I am sticker'},{type: 'card', title: 'I am card'},])
+            //miro.board.tags.create({title: 'Red tag', color: '#F24726', widgetIds: widgets})
+
             // Create new card
-            await miro.board.widgets.create
+            let wTestCard = await miro.board.widgets.create
             (
               {
                 "type":'card', 
-                  "title": "Story Title",
+                  "title": "color story",
                   "description": "Story Description",
-                  "bounds": {
-                      "width": 2000,
-                      "height": 60
-                  }
+				  "tags": [
+						{title: 'Red tag', color: '#F24726'},
+					],				  
+				  card: {
+					customFields: [
+						{
+							value: `test value`,
+							iconUrl: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+						},
+						
+					]
+				}				  
               }
             )
+
+            miro.board.tags.create({title: 'Red tag', color: '#F24726', widgetIds: wTestCard})
 
             // Display success
             miro.showNotification('Card has been added 2000')
