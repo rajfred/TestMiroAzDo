@@ -44,3 +44,5 @@ miro.onReady(() => {
     }
   })
 })
+
+console.log('Plugin installed 2:19')
