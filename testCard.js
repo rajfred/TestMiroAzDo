@@ -1,5 +1,5 @@
 //require('dotenv-safe').config()
-//const axios = require('axios')
+const axios = require('axios')
 
 //const { default: Axios } = require("axios")
 
@@ -9,7 +9,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm axios response',
+        title: 'Raj: Card npm axios response retry 9:13',
         svgIcon: icon,
         onClick: async () => {
 
