@@ -9,7 +9,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Add Card npm axios, dotenv',
+        title: 'Raj: Card npm axios response',
         svgIcon: icon,
         onClick: async () => {
 
@@ -36,13 +36,17 @@ miro.onReady(() => {
               }
             )
 
+            console.log(response);
+
+            alert(response);
+
             // Create new card
             await miro.board.widgets.create
             (
               {
                 "type":'card', 
                   "title": "Story Title",
-                  "description": "Story Description"
+                  "description": response
                   
               }
             )
