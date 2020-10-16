@@ -9,7 +9,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm axios response retry 9:13',
+        title: 'Raj: Card npm axios response retry 10:26',
         svgIcon: icon,
         onClick: async () => {
 
@@ -25,7 +25,7 @@ miro.onReady(() => {
 
 
             //call AzDo
-            const response = await axios.get
+            /*const response = await axios.get
             ('https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', 
               {
                 headers: 
@@ -36,9 +36,27 @@ miro.onReady(() => {
               }
             )
 
-            console.log(response);
+            console.log(response);*/
 
-            alert(response);
+            var request = new XMLHttpRequest()
+
+            request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
+            request.setRequestHeader('Content-Type', 'application/json; charset=utf-8;');
+            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + 'cxdfzxfkdrpfdcurbfb22i6k3m5esccwfpimzsglusosxe4krivq'));
+
+            request.onload = function() {
+              // Begin accessing JSON data here
+
+              var data = JSON.parse(this.response)
+
+              if (request.status >= 200 && request.status < 400) {
+                console.log(data)
+                } else {
+                console.log('error')
+                  }
+            }
+
+            request.send()
 
             // Create new card
             await miro.board.widgets.create
@@ -46,7 +64,7 @@ miro.onReady(() => {
               {
                 "type":'card', 
                   "title": "Story Title",
-                  "description": response
+                  "description": "Some discription"
                   
               }
             )
