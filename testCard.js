@@ -1,13 +1,14 @@
 //require('dotenv-safe').config()
-//const axios = require('axios')
-import axios from 'axios'
+const axios = require('axios')
+//import axios from 'axios'
+
 const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="4"></circle>'
 
 miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Add Card Axios 3:35 import',
+        title: 'Raj: Add Card npm axios, dotenv',
         svgIcon: icon,
         onClick: async () => {
 
@@ -45,4 +46,4 @@ miro.onReady(() => {
   })
 })
 
-console.log('Plugin installed 3:35')
+console.log('Plugin installed 4:22')
