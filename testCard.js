@@ -27,15 +27,14 @@ miro.onReady(() => {
             //miro.board.tags.create({title: 'Red tag', color: '#F24726', widgetIds: widgets})
 
             // Create new card
-            let wTestCard = await miro.board.widgets.create
+            //let wTestCard = 
+            await miro.board.widgets.create
             (
               {
                 "type":'card', 
                   "title": "color story",
                   "description": "Story Description",
-				  "tags": [
-						{title: 'Red tag', color: '#F24726'},
-					],				  
+				  				  
 				  card: {
 					customFields: [
 						{
@@ -48,7 +47,7 @@ miro.onReady(() => {
               }
             )
 
-            miro.board.tags.create({title: 'Red tag', color: '#F24726', widgetIds: wTestCard})
+            //miro.board.tags.create({title: 'Red tag', color: '#F24726', widgetIds: wTestCard})
 
             // Display success
             miro.showNotification('Card has been added 2000')
