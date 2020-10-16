@@ -33,7 +33,7 @@ miro.onReady(() => {
             )
 
             // Display success
-            miro.showNotification('Card has been added')
+            miro.showNotification('Card has been added 2000')
           }
           else
           {
