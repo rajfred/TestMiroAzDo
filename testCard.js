@@ -27,18 +27,18 @@ miro.onReady(() => {
 
 
             //call AzDo
-            
+            console.log('Before call')
             const response = await axios.get
             ('https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', 
               {
                 headers: 
                 {
-                  Authorization: `token abcd`, 
-                  'User-Agent': 'Miro Importer',
+                  Authorization: `token cdyvvwbq4cfno5qhnl6wmt25pl4vhomfx36g2mvszuycluvbpwta`,                   
                 },
               }
             )
 
+            console.log('After call')
             console.log(response);
 
             /*
