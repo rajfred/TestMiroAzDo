@@ -6,11 +6,14 @@
 const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="4"></circle>'
 var responsedata;
 
+
+
+
 miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm response parse 11:07',
+        title: 'Raj: Card npm API call env 19/10@9:00',
         svgIcon: icon,
         onClick: async () => {
 
@@ -39,13 +42,12 @@ miro.onReady(() => {
 
             console.log(response);*/
 
-            var request = new XMLHttpRequest()
-
-            
+            var request = new XMLHttpRequest()            
 
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
             request.setRequestHeader('Content-Type', 'application/json; charset=utf-8;');
-            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + 'cxdfzxfkdrpfdcurbfb22i6k3m5esccwfpimzsglusosxe4krivq'));
+            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + `${process.env.GITHUB_TOKEN}`));
+            request.setRequestHeader ("User-Agent", "Miro Importer");
             request.responseType = 'json';
 
             request.onload = function() {
@@ -55,8 +57,7 @@ miro.onReady(() => {
 
               if (request.status >= 200 && request.status < 400) {
                   console.log(data);
-                  responsedata = JSON.parse(data);
-                  console.log(responsedata);
+                  responsedata = data;
                 } else {
                 console.log('error')
                   }
@@ -81,7 +82,7 @@ miro.onReady(() => {
               {
                 "type":'card', 
                   "title": "Story Title",
-                  "description": responsedata.fields.System.Description                  
+                  "description": "description"                 
               }
             )
 
