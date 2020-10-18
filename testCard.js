@@ -27,7 +27,8 @@ miro.onReady(() => {
 
 
             //call AzDo
-            /*const response = await axios.get
+            
+            const response = await axios.get
             ('https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', 
               {
                 headers: 
@@ -38,8 +39,9 @@ miro.onReady(() => {
               }
             )
 
-            console.log(response);*/
+            console.log(response);
 
+            /*
             var request = new XMLHttpRequest()            
 
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
@@ -62,6 +64,8 @@ miro.onReady(() => {
             }
 
             request.send()
+
+            */
 
             /*
             Microsoft.VSTS.Scheduling.Effort: 2
