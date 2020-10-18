@@ -1,7 +1,6 @@
 //require('dotenv-safe').config()
 //const axios = require('axios')
-require('dotenv').config();  
-
+//require('dotenv').config();  
 
 //const { default: Axios } = require("axios")
 
@@ -12,7 +11,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm API call env 19/10@9:00',
+        title: 'Raj: Card npm API call env 19/10@9:36',
         svgIcon: icon,
         onClick: async () => {
 
@@ -45,8 +44,8 @@ miro.onReady(() => {
 
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
             request.setRequestHeader('Content-Type', 'application/json; charset=utf-8;');
-            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + `${process.env.GITHUB_TOKEN}`));
-            request.setRequestHeader ("User-Agent", "Miro Importer");
+            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + "'cdyvvwbq4cfno5qhnl6wmt25pl4vhomfx36g2mvszuycluvbpwta'"));
+            request.setRequestHeader ("User-Agent", "Miro");
             request.responseType = 'json';
 
             request.onload = function() {
