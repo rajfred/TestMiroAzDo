@@ -72,14 +72,28 @@ miro.onReady(() => {
                data = JSON.parse(this.response)
 
               if (request.status >= 200 && request.status < 400) {
+                console.log('Got data')
                   console.log(data);
                   responsedata = data;
+
+                  await miro.board.widgets.create
+                  (
+                    {
+                      "type":'card', 
+                        "title": "Story Title",
+                        "description": data                
+                    }
+                  )
+
                 } else {
+                  miro.showNotification('error ' + request.statusText)
                 console.log('error')
                   }
             }
 
+            console.log("call for data")
             request.send()
+            console.log("send called for data")
 
             
 
@@ -100,7 +114,7 @@ miro.onReady(() => {
               {
                 "type":'card', 
                   "title": "Story Title",
-                  "description": data                
+                  "description": "Something"                
               }
             )
 
