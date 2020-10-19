@@ -131,4 +131,4 @@ miro.onReady(() => {
   })
 })
 
-console.log('Plugin installed 4:22')
+console.log('Plugin installed 19/10@1:12 version')
