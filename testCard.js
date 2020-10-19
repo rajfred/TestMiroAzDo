@@ -76,7 +76,7 @@ miro.onReady(() => {
                   console.log(data);
                   responsedata = data;
 
-                  await miro.board.widgets.create
+                  miro.board.widgets.create
                   (
                     {
                       "type":'card', 
