@@ -56,7 +56,6 @@ miro.onReady(() => {
 */
             console.log('After call')
             console.log(response);          
-
             
             var request = new XMLHttpRequest()            
 
