@@ -11,7 +11,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm API call env 19/10@12:39',
+        title: 'Raj: Card npm API call env 19/10@12:50',
         svgIcon: icon,
         onClick: async () => {
 
@@ -53,10 +53,10 @@ miro.onReady(() => {
                 },
               }
             )
-*/
+
             console.log('After call')
             console.log(response);          
-            
+  */          
             var request = new XMLHttpRequest()            
 
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
