@@ -62,9 +62,9 @@ miro.onReady(() => {
 
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
             request.setRequestHeader('Content-Type', 'application/json; charset=utf-8;');
-            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + "'cdyvvwbq4cfno5qhnl6wmt25pl4vhomfx36g2mvszuycluvbpwta'"));
+            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + "'abcd'"));
             //request.setRequestHeader ("User-Agent", "Miro");
-            request.responseType = 'json';
+            //request.responseType = 'json';
 
             request.onload = function() {
               // Begin accessing JSON data here
@@ -131,4 +131,4 @@ miro.onReady(() => {
   })
 })
 
-console.log('Plugin installed 19/10@1:12 version')
+console.log('Plugin installed 19/10@1:22 version')
