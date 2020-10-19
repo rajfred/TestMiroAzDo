@@ -25,6 +25,7 @@ miro.onReady(() => {
             // Delete all board objects
             //await miro.board.widgets.deleteById(objects.map(object => object.id))
 
+            /*
 
             //call AzDo
             console.log('Before call')
@@ -40,6 +41,7 @@ miro.onReady(() => {
               console.log('There was an error call')
               console.log(error);
             });
+            */
 
             /*
             const response = await axios.get
@@ -55,7 +57,7 @@ miro.onReady(() => {
             console.log('After call')
             console.log(response);          
 
-            /*
+            
             var request = new XMLHttpRequest()            
 
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
@@ -79,7 +81,7 @@ miro.onReady(() => {
 
             request.send()
 
-            */
+            
 
             /*
             Microsoft.VSTS.Scheduling.Effort: 2
