@@ -57,18 +57,19 @@ miro.onReady(() => {
             console.log('After call')
             console.log(response);          
   */          
-            var request = new XMLHttpRequest()            
+            var request = new XMLHttpRequest()  
+            var data;          
 
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
             request.setRequestHeader('Content-Type', 'application/json; charset=utf-8;');
             request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + "'cdyvvwbq4cfno5qhnl6wmt25pl4vhomfx36g2mvszuycluvbpwta'"));
-            request.setRequestHeader ("User-Agent", "Miro");
+            //request.setRequestHeader ("User-Agent", "Miro");
             request.responseType = 'json';
 
             request.onload = function() {
               // Begin accessing JSON data here
 
-              var data = JSON.parse(this.response)
+               data = JSON.parse(this.response)
 
               if (request.status >= 200 && request.status < 400) {
                   console.log(data);
@@ -99,7 +100,7 @@ miro.onReady(() => {
               {
                 "type":'card', 
                   "title": "Story Title",
-                  "description": response.data                
+                  "description": data                
               }
             )
 
