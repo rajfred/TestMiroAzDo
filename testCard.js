@@ -28,6 +28,20 @@ miro.onReady(() => {
 
             //call AzDo
             console.log('Before call')
+
+            axios.defaults.baseURL = 'https://dev.azure.com';
+            axios.defaults.headers.common['Authorization'] = "Basic " + btoa('Basic' + ":" + "'cdyvvwbq4cfno5qhnl6wmt25pl4vhomfx36g2mvszuycluvbpwta'");
+
+            axios.get('/TeamFred/_apis/wit/workItems/98498')
+            .then(function (response) {
+
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+            /*
             const response = await axios.get
             ('https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', 
               {
@@ -37,9 +51,9 @@ miro.onReady(() => {
                 },
               }
             )
-
+*/
             console.log('After call')
-            console.log(response);
+            console.log(response);          
 
             /*
             var request = new XMLHttpRequest()            
@@ -84,7 +98,7 @@ miro.onReady(() => {
               {
                 "type":'card', 
                   "title": "Story Title",
-                  "description": "description"                 
+                  "description": response.data                
               }
             )
 
