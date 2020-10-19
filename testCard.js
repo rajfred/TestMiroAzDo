@@ -11,7 +11,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm API call env 19/10@9:36',
+        title: 'Raj: Card npm API call env 19/10@11:52',
         svgIcon: icon,
         onClick: async () => {
 
@@ -34,10 +34,10 @@ miro.onReady(() => {
 
             axios.get('/TeamFred/_apis/wit/workItems/98498')
             .then(function (response) {
-
               console.log(response);
             })
             .catch(function (error) {
+              console.log('There was an error call')
               console.log(error);
             });
 
