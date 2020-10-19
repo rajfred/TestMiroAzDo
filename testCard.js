@@ -69,7 +69,7 @@ miro.onReady(() => {
             request.onload = function() {
               // Begin accessing JSON data here
 
-               data = JSON.parse(this.response)
+               //data = JSON.parse(this.response)
 
               if (request.status >= 200 && request.status < 400) {
                 console.log('Got data')
