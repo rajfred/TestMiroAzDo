@@ -11,7 +11,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm API call env 19/10@2:25pm',
+        title: 'Raj: Card npm API call env 19/10@2:40pm rollbacked',
         svgIcon: icon,
         onClick: async () => {
 
@@ -57,39 +57,26 @@ miro.onReady(() => {
             console.log('After call')
             console.log(response);          
   */          
-            var request = new XMLHttpRequest()  
-            var data;          
-
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
             request.setRequestHeader('Content-Type', 'application/json; charset=utf-8;');
-            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + "'abcd'"));
-            //request.setRequestHeader ("User-Agent", "Miro");
-            //request.responseType = 'json';
+            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + 'cdyvvwbq4cfno5qhnl6wmt25pl4vhomfx36g2mvszuycluvbpwta'));
+            request.responseType = 'json';
 
             request.onload = function() {
               // Begin accessing JSON data here
-              console.log(this.response)
-               //data = JSON.parse(this.response)
+
+              var data = JSON.parse(this.response)
 
               if (request.status >= 200 && request.status < 400) {
-                console.log('Got data')
                   console.log(data);
-                  responsedata = data;
-
-                  miro.board.widgets.create
-                  (
-                    {
-                      "type":'card', 
-                        "title": "Story Title",
-                        "description": data                
-                    }
-                  )
-
+                  responsedata = JSON.parse(data);
+                  console.log(responsedata);
                 } else {
-                  miro.showNotification('error ' + request.statusText)
                 console.log('error')
                   }
             }
+
+            request.send()
 
             console.log("call for data")
             request.send()
