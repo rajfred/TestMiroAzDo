@@ -57,6 +57,9 @@ miro.onReady(() => {
             console.log('After call')
             console.log(response);          
   */          
+
+ var request = new XMLHttpRequest()
+ 
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
             request.setRequestHeader('Content-Type', 'application/json; charset=utf-8;');
             request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + 'cdyvvwbq4cfno5qhnl6wmt25pl4vhomfx36g2mvszuycluvbpwta'));
@@ -118,4 +121,4 @@ miro.onReady(() => {
   })
 })
 
-console.log('Plugin installed 19/10@1:22 version')
+console.log('Plugin installed 19/10@2:47 rollbacked')
