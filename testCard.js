@@ -104,8 +104,8 @@ miro.onReady(() => {
             (
               {
                 "type":'card', 
-                  "title": "Story Title",
-                  "description": "Something"                
+                  "title": data.fields["System.Title"],
+                  "description": data.fields["System.Description"]                
               }
             )
 
