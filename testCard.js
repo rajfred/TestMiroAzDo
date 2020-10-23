@@ -62,7 +62,7 @@ miro.onReady(() => {
  
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
             request.setRequestHeader('Content-Type', 'application/json; charset=utf-8;');
-            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + 'cdyvvwbq4cfno5qhnl6wmt25pl4vhomfx36g2mvszuycluvbpwta'));
+            request.setRequestHeader ("Authorization", "Basic " + btoa('Basic' + ":" + 'ysx3szzwfxjimwpxlua62bja5itgmc5zu2nrmwgq2ibgbsegqdoq'));
             request.responseType = 'json';
 
             request.onload = function() {
