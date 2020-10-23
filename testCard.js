@@ -11,7 +11,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm API call env 23/10@11:21pm',
+        title: 'Raj: Card npm API call env 23/10@11:42pm',
         svgIcon: icon,
         onClick: async () => {
 
@@ -124,4 +124,4 @@ miro.onReady(() => {
   })
 })
 
-console.log('Plugin installed 23/10@11:21pm')
+console.log('Plugin installed 23/10@11:42pm')
