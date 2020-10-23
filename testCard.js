@@ -11,7 +11,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm API call env 19/10@2:40pm rollbacked',
+        title: 'Raj: Card npm API call env 23/10@10:12pm',
         svgIcon: icon,
         onClick: async () => {
 
@@ -79,13 +79,10 @@ miro.onReady(() => {
                   }
             }
 
-            request.send()
-
             console.log("call for data")
             request.send()
             console.log("send called for data")
-
-            
+           
 
             /*
             Microsoft.VSTS.Scheduling.Effort: 2
@@ -121,4 +118,4 @@ miro.onReady(() => {
   })
 })
 
-console.log('Plugin installed 19/10@2:47 rollbacked')
+console.log('Plugin installed 23/10@10:12pm')
