@@ -79,14 +79,25 @@ miro.onReady(() => {
                   console.log(data.id);
                   console.log(data.fields["System.Title"]);
 
-                  miro.board.widgets.create
+                  let wTestCard = miro.board.widgets.create
                   (
                     {
                       "type":'card', 
                         "title": data.fields["System.Title"],
-                        "description": data.fields["System.Description"]                
+                        "description": data.fields["System.Description"]   ,                        
+                        card: {
+                          customFields: [
+                            {
+                              value: `Backlog Item`,
+                              iconUrl: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+                            },
+                            
+                          ]
+                        }
                     }
-                  )
+                  );
+
+                  miro.board.tags.create({title: data.fields["Microsoft.VSTS.Scheduling.Effort"], color: '#F24726', widgetIds: wTestCard})
 
                 } else {
                 console.log('error')
