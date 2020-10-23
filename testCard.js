@@ -11,7 +11,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm API call env 23/10@10:47pm',
+        title: 'Raj: Card npm API call env 23/10@11:07pm',
         svgIcon: icon,
         onClick: async () => {
 
@@ -78,6 +78,16 @@ miro.onReady(() => {
                   console.log(this.response.fields["System.Title"]);
                   console.log(data.id);
                   console.log(data.fields["System.Title"]);
+
+                  await miro.board.widgets.create
+                  (
+                    {
+                      "type":'card', 
+                        "title": data.fields["System.Title"],
+                        "description": data.fields["System.Description"]                
+                    }
+                  )
+
                 } else {
                 console.log('error')
                   }
@@ -100,14 +110,7 @@ miro.onReady(() => {
 
 
             // Create new card
-            await miro.board.widgets.create
-            (
-              {
-                "type":'card', 
-                  "title": data.fields["System.Title"],
-                  "description": data.fields["System.Description"]                
-              }
-            )
+
 
             // Display success
             miro.showNotification('Card has been added 2000')
@@ -122,4 +125,4 @@ miro.onReady(() => {
   })
 })
 
-console.log('Plugin installed 23/10@10:47pm')
+console.log('Plugin installed 23/10@11:07pm')
