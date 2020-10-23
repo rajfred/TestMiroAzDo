@@ -58,7 +58,7 @@ miro.onReady(() => {
             console.log(response);          
   */          
 
-  var data;
+ var data;
  var request = new XMLHttpRequest()
  
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
@@ -68,9 +68,6 @@ miro.onReady(() => {
 
             request.onload = function() {
               // Begin accessing JSON data here
-
-              
-
               if (request.status >= 200 && request.status < 400) {
                   console.log(this.response);
                   data =  this.response;
@@ -79,24 +76,30 @@ miro.onReady(() => {
                   console.log(data.id);
                   console.log(data.fields["System.Title"]);
 
+                  // Create new card
+                  //TODO: change icon image
+                  //TODO: Tags are not working yet
                   let wTestCard = miro.board.widgets.create
                   (
                     {
                       "type":'card', 
                         "title": data.fields["System.Title"],
-                        "description": data.fields["System.Description"]   ,                        
+                        "description": data.fields["System.Description"],                        
                         card: {
                           customFields: [
                             {
                               value: `Backlog Item`,
                               iconUrl: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
-                            },
-                            
+                            },    
+                            {
+                              value: data.fields["System.IterationPath"],
+                              iconUrl: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
+                            } ,                       
                           ]
                         }
                     }
                   );
-
+                  //TODO: why is this not working
                   miro.board.tags.create({title: data.fields["Microsoft.VSTS.Scheduling.Effort"], color: '#F24726', widgetIds: wTestCard})
 
                 } else {
@@ -107,21 +110,6 @@ miro.onReady(() => {
             console.log("call for data")
             request.send()
             console.log("send called for data")
-           
-
-            /*
-            Microsoft.VSTS.Scheduling.Effort: 2
-            System.AreaPath: "Pharmacy\Program\Dracarys"
-            System.AssignedTo: {displayName: "Pradeep Vajrapu"
-            System.Description: "<div>When a pharmacist dispenses a script th
-            System.IterationPath: "Pharmacy\PI 7\Sprint 1"
-            System.Title: "V2 scripts must be initiated via Flow"
-            System.WorkItemType: "Product Backlog Item"
-            */
-
-
-            // Create new card
-
 
             // Display success
             miro.showNotification('Card has been added 2000')
