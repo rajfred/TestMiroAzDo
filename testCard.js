@@ -79,7 +79,7 @@ miro.onReady(() => {
                   console.log(data.id);
                   console.log(data.fields["System.Title"]);
 
-                  await miro.board.widgets.create
+                  miro.board.widgets.create
                   (
                     {
                       "type":'card', 
