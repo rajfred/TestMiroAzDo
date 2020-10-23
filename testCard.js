@@ -11,7 +11,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm API call env 23/10@10:31pm',
+        title: 'Raj: Card npm API call env 23/10@10:47pm',
         svgIcon: icon,
         onClick: async () => {
 
@@ -58,6 +58,7 @@ miro.onReady(() => {
             console.log(response);          
   */          
 
+  var data;
  var request = new XMLHttpRequest()
  
             request.open('GET', 'https://dev.azure.com/TeamFred/_apis/wit/workItems/98498', true)
@@ -68,12 +69,15 @@ miro.onReady(() => {
             request.onload = function() {
               // Begin accessing JSON data here
 
-              //var data = JSON.parse(this.response)
+              
 
               if (request.status >= 200 && request.status < 400) {
                   console.log(this.response);
-                  responsedata = JSON.parse(this.response);
-                  console.log(responsedata);
+                  data =  this.response;
+                  console.log(this.response.id);
+                  console.log(this.response.fields.System.Title);
+                  console.log(data.id);
+                  console.log(data.fields.System.Title);
                 } else {
                 console.log('error')
                   }
@@ -118,4 +122,4 @@ miro.onReady(() => {
   })
 })
 
-console.log('Plugin installed 23/10@10:31pm')
+console.log('Plugin installed 23/10@10:47pm')
