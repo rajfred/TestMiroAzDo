@@ -11,7 +11,7 @@ miro.onReady(() => {
   miro.initialize({
     extensionPoints: {
       bottomBar: {
-        title: 'Raj: Card npm API call env 23/10@10:12pm',
+        title: 'Raj: Card npm API call env 23/10@10:31pm',
         svgIcon: icon,
         onClick: async () => {
 
@@ -68,11 +68,11 @@ miro.onReady(() => {
             request.onload = function() {
               // Begin accessing JSON data here
 
-              var data = JSON.parse(this.response)
+              //var data = JSON.parse(this.response)
 
               if (request.status >= 200 && request.status < 400) {
-                  console.log(data);
-                  responsedata = JSON.parse(data);
+                  console.log(this.response);
+                  responsedata = JSON.parse(this.response);
                   console.log(responsedata);
                 } else {
                 console.log('error')
@@ -118,4 +118,4 @@ miro.onReady(() => {
   })
 })
 
-console.log('Plugin installed 23/10@10:12pm')
+console.log('Plugin installed 23/10@10:31pm')
