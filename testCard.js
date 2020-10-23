@@ -100,7 +100,7 @@ miro.onReady(() => {
                     }
                   );
                   //TODO: why is this not working
-                  miro.board.tags.create({title: data.fields["Microsoft.VSTS.Scheduling.Effort"], color: '#F24726', widgetIds: wTestCard})
+                  miro.board.tags.create({title: data.fields["System.BoardLane"], color: '#F24726', widgetIds: wTestCard})
 
                 } else {
                 console.log('error')
