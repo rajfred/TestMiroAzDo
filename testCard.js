@@ -75,9 +75,9 @@ miro.onReady(() => {
                   console.log(this.response);
                   data =  this.response;
                   console.log(this.response.id);
-                  console.log(this.response.fields.System.Title);
+                  console.log(this.response.fields["System.Title"]);
                   console.log(data.id);
-                  console.log(data.fields.System.Title);
+                  console.log(data.fields["System.Title"]);
                 } else {
                 console.log('error')
                   }
